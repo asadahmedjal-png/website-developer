@@ -4,330 +4,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIET - About Page</title>
+    <title>TIET - Home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
 
-            <a href="index1.html">
+            <a href="index.html">
                 <font face="Arial" color="blue" size="6">
-                    <b>TIET</b>  💻 
+                    <b>TIET</b> 💻
                 </font>
                 <br>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <ul class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index1.html">Home</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
 
-                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Menu
+                            </a>
 
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Menu
-                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Web development.html">Web Development</a></li>
+                                <li><a class="dropdown-item" href="m.s office.html">M.S office automation</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="animation.html">Other Services</a></li>
+                            </ul>
+                        </li>
 
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="Web development.html">Web Development</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-auto " role="search">
+                        <input class="form-control me-2 btn btn-light " style="color: black; color-scheme: light;"
+                            type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-danger btn-outline-light" type="submit">Search</button>
+                    </form>
+                    <div class="mx-2">
+                        <button class="btn btn-danger btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#LoginModal">Login</button>
+                        <button class="btn btn-danger btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#SignUpModal">SignUp</button>
 
-                            <li>
-                                <a class="dropdown-item" href="m.s office.html">M.S office automation</a>
-                            </li>
+                        <!-- Like Button -->
+                    <button class="btn btn-danger btn-outline-secondary ms-auto" id="likeBtn" onclick="addLike()">
+                        🤍 Like <span id="likeCount">0</span>
+                    </button>
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                    <script>
+                        let count = Number(localStorage.getItem("likeCount")) || 0;
+                        let liked = localStorage.getItem("liked") === "true";
 
-                            <li>
-                                <a class="dropdown-item" href="animation.html">Other Services</a>
-                            </li>
-                        </ul>
-                    </li>
+                        function updateButton() {
+                            document.getElementById("likeCount").innerText = count;
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
+                            document.getElementById("likeBtn").innerHTML =
+                                (liked ? "❤️ Liked " : "🤍 Like ") +
+                                '<span id="likeCount">' + count + '</span>';
+                        }
 
-                </ul>
-                  <!-- Like Button -->
-                         
-                        <button class="btn btn-danger btn-outline-light ms-auto" id="likeBtn" onclick="addLike()">
-                            🤍 Like <span id="likeCount">0</span>
-                        </button>
-
-                        <script>
-                            let count = Number(localStorage.getItem("likeCount")) || 0;
-                            let liked = localStorage.getItem("liked") === "true";
-
-                            function updateButton() {
-                                document.getElementById("likeCount").innerText = count;
-
-                                document.getElementById("likeBtn").innerHTML =
-                                    (liked ? "❤️ Liked " : "🤍 Like ") +
-                                    '<span id="likeCount">' + count + '</span>';
+                        function addLike() {
+                            if (liked) {
+                                count--;
+                                liked = false;
+                            } else {
+                                count++;
+                                liked = true;
                             }
 
-                            function addLike() {
-                                if (!liked) {
-                                    count++;
-                                    liked = true;
-
-                                    localStorage.setItem("likeCount", count);
-                                    localStorage.setItem("liked", "true");
-
-                                    updateButton();
-                                }
-                            }
+                            localStorage.setItem("likeCount", count);
+                            localStorage.setItem("liked", liked);
 
                             updateButton();
-                        </script>
-            </div>
+                        }
+
+                        updateButton();
+                    </script>
+
+                    </div>
+                </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <div class="container my-5">
 
-        <div class="row align-items-center">
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" style="color: rgb(6, 126, 126);" id="LoginModalLabel">Login to TIET
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label"> Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-label mb-3">
+                            <label for="floatingInput">Email </label>
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Enter your Email">
+                        </div>
+                        <div class="form-label">
+                            <label for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" id="floatingPassword"
+                                placeholder="Enter your Password">
+                        </div>
 
-            <div class="col-md-7">
+                        <input type="checkbox" class="me-2" required>
+                        <label>Check out box</label>
 
-                <h2 class="fw-normal lh-1  fw-bold" style="color:darkgreen">
-                    About TIET.
-                    <span class="text-body-secondary">
-                        Learn more about us.
-                    </span>
-                </h2>
+                        <br><br>
 
-                <p class="lead mt-3 fw-bold" style="color:rgb(95 185 201)">
-                    Welcome to Talent Identification & Empowerment Trust (TIET).
-                    Our organization aims to empower students and individuals
-                    through education, technology and skill development.
-                </p>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" style="color: rgb(6, 126, 126);" id="SignUpModalLabel">Get to TIET
+                        Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label"> Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-label mb-3">
+                            <label for="floatingInput">Email</label>
+                            <input type="text" class="form-control" placeholder="Enter your Email" required>
 
-                <p class="fw-bold" style="color:black">
-                    We encourage learning, innovation and personal growth.
-                    Our goal is to create opportunities for people to develop
-                    their skills and build a better future.
-                </p>
+                        </div>
+                        <div class="form-label">
+                            <label for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" id="floatingPassword"
+                                placeholder="Enter your password">
+                        </div>
+                        <div class="aform-label mb-3">
+                            <label for="floatingInput">another Email</label>
+                            <input type="text" class="form-control" placeholder="Enter your another Email" required>
 
-                <!-- <a href="index1.html" class="btn btn-primary">
-                    Back to Home
-                </a> -->
+                        </div>
 
+                        <input type="checkbox" class="me-2" required>
+                        <label>check out box</label>
+
+                        <br><br>
+
+                        <button type="submit" class="btn btn-primary">Creat Account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                class="active"></button>
+
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="random(1).jpg" class="d-block img-fluid rounded shadow w-100" alt="Welcome to TIET"
+                    style="height:540px; object-fit:cover;">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Welcome to TIET</h2>
+                    <p>Explore learning and technology.</p>
+
+                </div>
             </div>
 
-            <div class="col-md-5 mt-4 mt-md-0">
+            <div class="carousel-item">
+                <img src="random(2).jpg" class="d-block img-fluid rounded shadow w-100" alt="Technology"
+                    style="height:540px; object-fit:cover;">
 
-                <img src="award1.jpg" class="img-fluid rounded shadow" alt="TIET Award">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Technology</h2>
+                    <p>Discover new ideas and innovations.</p>
+                </div>
+            </div>
 
+            <div class="carousel-item">
+                <img src="random(3).jpg" class="d-block img-fluid rounded shadow w-100" alt="Technology"
+                    style="height:540px; object-fit:cover;">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Our Vision</h2>
+                    <p>Build skills for a better future.</p>
+                </div>
             </div>
 
         </div>
 
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
     </div>
-    <div class="container my-5">
 
-        <div class="row align-items-center">
+    <!-- Awards Section -->
+    <div class="container my-4">
+        <div class="row mb-2">
 
-            <div class="col-md-7 order-md-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden shadow-sm mb-4">
 
-                <h2 class="fw-normal lh-1">
+                    <div class="col p-4 d-flex flex-column">
+                        <strong class="text-primary-emphasis mb-2">
+                            Talent Identification & Empowerment Trust (TIET)
+                        </strong>
 
-                    <span class="text-body-secondary">
+                        <h5>Special Jury Award of the Year (Tamil Nadu)</h5>
 
-                    </span>
-                </h2>
+                        <div class="text-body-secondary fw-bold my-2">
+                            15th August 2021
+                        </div>
 
+                        <p>
+                            The 1st National Awards for Social Excellence
+                            2021 held on 15th August 2021.
+                        </p>
 
-                <section>
-                    <h2 style="color: green;" class=" d-flex justify-content-center align-items-center fw-bold ">Our
-                        Mission</h2>
-                    <p class="fw-bold" style="color: rgb(239 124 88);">
-                        To envision a society with educated, employed and committed youth
-                        who work towards the growth and prosperity of the community.
-                        To guide and motivate young people towards acquiring quality
-                        education, developing professional skills and building successful
-                        careers for a bright future. To inspire them to dream big, think
-                        beyond boundaries and explore new opportunities. We aim to develop
-                        leadership qualities, self-confidence and positive attitudes among
-                        youth. To encourage them to work hard, think smart, overcome
-                        challenges and achieve higher goals. Our mission is to empower
-                        every young individual to become responsible citizens and contribute
-                        to creating a better society.
-                    </p>
-                </section>
+                        <a href="about.html">Continue reading</a>
+                    </div>
 
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="award1.jpg" width="200" height="250" class="img-fluid rounded shadow"
+                            alt="Special Jury Award">
+                    </div>
 
-                <!-- <a href="index1.html" class="btn btn-primary">
-                    Back to Home
-                </a> -->
-
+                </div>
             </div>
 
-            <div class="col-md-5 mt-4 mt-md-0">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden shadow-sm mb-4">
 
-                <img src="our mission.jpg" alt="Our Mission" class="img-fluid rounded shadow"
-                    style="height: 500px;  width:500px;">
+                    <div class="col p-4 d-flex flex-column">
+                        <strong class="text-primary-emphasis mb-2">
+                            Talent Identification & Empowerment Trust (TIET)
+                        </strong>
 
+                        <h5>MOULANA ABUL KALAM AZAD NATIONAL EDUCATION AWARDS - 2019</h5>
+
+                        <div class="text-body-secondary fw-bold my-2">
+                            11 November 2019
+                        </div>
+
+                        <p>
+                            Presented by the Skilled Youth Professionals
+                            Association (SYPA) for education and social empowerment.
+                        </p>
+
+                        <a href="about.html">Continue reading</a>
+                    </div>
+
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="award.jpg" width="200" height="250" class="img-fluid rounded shadow"
+                            alt="Education Award">
+                    </div>
+
+                </div>
             </div>
 
         </div>
-
-    </div>
-    <div class="container my-5">
-
-        <div class="row align-items-center">
-
-            <div class="col-md-7 ">
-
-                <h2 class="fw-normal lh-1">
-
-                    <span class="text-body-secondary">
-
-                    </span>
-                </h2>
-
-                <section>
-                    <h2 style="color: rgb(43 140 179);"
-                        class=" d-flex justify-content-center align-items-center fw-bold ">Our
-                        History</h2>
-
-                    <p class="fw-bold" style="color: #bbb724;">
-                        Talent Identification & Empowerment Trust (TIET) saw its dawn in 2011 with a vision
-                        to empower individuals through quality education, skill development,
-                        and social responsibility. The organisation was established with the
-                        enthusiasm and commitment of its founder members, who dreamed of
-                        creating meaningful opportunities and building a brighter future
-                        for underprivileged and deserving students.
-                    </p>
-                    <p class="fw-bold" style="color: #bbb724;">
-                        Along with academic support, TIET focuses on skill-based training
-                        programmes, including computer skills, communication skills, coding,
-                        and Tally. The organisation also provides exposure to higher learning
-                        through seminars, workshops, awareness programmes, and career
-                        guidance activities.
-                    </p>
-
-                    <p class="fw-bold" style="color: #bbb724;">
-                        Our commitment extends beyond education. We continuously explore
-                        innovative, need-based projects that promote personal growth,
-                        professional development, social awareness, and community welfare.
-                        Through these efforts, we strive to create opportunities that help
-                        individuals become confident, skilled, and responsible members
-                        of society.
-                    </p>
-
-                    <p class="fw-bold" style="color: #bbb724;">
-                        Today, TIET continues to plan, develop, and execute impactful
-                        initiatives in alignment with its mission and vision. With dedication,
-                        teamwork, and a strong belief in the power of education, we remain
-                        committed to transforming lives and building a better tomorrow.
-                    </p>
-                </section>
-                
-            </div>
-
-            <div class="col-md-5 mt-4 mt-md-0">
-
-                <img src="our history.avif" alt="History education" class="img-fluid rounded shadow"
-                    style="height: 500px;  width:500px;">
-
-            </div>
-
-        </div>
-
-    </div>
-    <div class="container my-5">
-
-        <div class="row align-items-center">
-
-            <div class="col-md-7 order-md-2 ">
-
-                <h2 class="fw-normal lh-1">
-
-                    <span class="text-body-secondary">
-
-                    </span>
-                </h2>
-
-                <section>
-                    <h2 style="color: rgb(213 58 114);"
-                        class=" d-flex justify-content-center align-items-center fw-bold ">Our
-                        Library</h2>
-
-                    <p class="fw-bold" style="color: rgb(34, 108, 34);">
-                        Talent Identification & Empowerment Trust (TIET)
-                        provides a free library facility for students to
-                        improve their knowledge and learning skills.
-                    </p>
-
-                    <p class="fw-bold" style="color: rgb(34, 108, 34);">
-                        Our library offers free books, educational materials,
-                        history books, science books, computer books,
-                        general knowledge, storybooks and competitive exam
-                        preparation materials.
-                    </p>
-
-                    <p class="fw-bold" style="color: rgb(34, 108, 34);">
-                        Students can access free books and learning resources
-                        to develop reading habits, gain knowledge and build
-                        a brighter future.
-                    </p>
-
-                    <h3 class="d-flex justify-content-center align-items-center fw-bold " style="color: rgb(148, 28, 6);">Our Library Facilities</h3>
-
-                    <ul class="  justify-content-center align-items-center fw-bold " style="color: olivedrab;">
-                        <li>Science and Computer books</li>
-                        <li class="justify-content-center align-items-center fw-bold" >History and General Knowledge books</li>
-                        <li class="justify-content-center align-items-center fw-bold" >Storybooks and educational materials</li>
-                        <li class="justify-content-center align-items-center fw-bold" >Free books for all students</li>
-                        <li class="justify-content-center align-items-center fw-bold" >Competitive exam preparation books</li>
-                        <li class="justify-content-center align-items-center fw-bold" >Free learning resources</li>
-                    </ul>
-                </section>
-
-                <a href="index1.html" class="btn btn-primary justify-content-center align-items-center fw-bold">
-                    Back to Home
-                </a>
-
-            </div>
-
-            <div class="col-md-5 mt-4 mt-md-0">
-
-                <img src="our library.jpg" alt="History education" class="img-fluid rounded shadow"
-                    style="height: 500px;  width:500px;">
-
-            </div>
-
-        </div>
-
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-        <p class="mb-0">© 2026 TIET PBT. All Rights Reserved.</p>
-    </footer>
+    <div>
+        <footer class="bg-dark text-white text-center p-3">
+            <p class="mb-0">© 2026 TIET PBT. All Rights Reserved.</p>
+        </footer>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
