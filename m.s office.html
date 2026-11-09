@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIET - M.S Office Automation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+
+            <a href="index1.html">
+                <font face="Arial" color="blue" size="6">
+                    <b>TIET</b> 💻
+                </font>
+                <br>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index1.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="index1.html" role="button"
+                                data-bs-toggle="dropdown">
+                                Menu
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Web development.html">Web Development</a></li>
+                                <li><a class="dropdown-item" href="m.s office.html">M.S Office Automation</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="animation.html">Other Services</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                     <!-- Like Button -->
+                         
+                        <button class="btn btn-danger btn-outline-light ms-auto" id="likeBtn" onclick="addLike()">
+                            🤍 Like <span id="likeCount">0</span>
+                        </button>
+
+                        <script>
+                            let count = Number(localStorage.getItem("likeCount")) || 0;
+                            let liked = localStorage.getItem("liked") === "true";
+
+                            function updateButton() {
+                                document.getElementById("likeCount").innerText = count;
+
+                                document.getElementById("likeBtn").innerHTML =
+                                    (liked ? "❤️ Liked " : "🤍 Like ") +
+                                    '<span id="likeCount">' + count + '</span>';
+                            }
+
+                            function addLike() {
+                                if (!liked) {
+                                    count++;
+                                    liked = true;
+
+                                    localStorage.setItem("likeCount", count);
+                                    localStorage.setItem("liked", "true");
+
+                                    updateButton();
+                                }
+                            }
+
+                            updateButton();
+                        </script>
+                </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="container mt-5 text-center">
+
+            <!-- Welcome -->
+            <div style="
+                background-color:#e3f2fd;
+                color:#0d47a1;
+                border:3px solid #2196f3;
+                border-radius:15px;
+                padding:25px;
+                margin:20px;
+                text-align:center;
+                font-family:Arial;
+                font-size:30px;
+                font-weight:bold;
+                box-shadow:3px 3px 12px gray;
+            ">
+
+                <p style="margin:0;">
+                    Welcome to TIET
+                </p>
+
+            </div>
+
+            <h1 class="fw-bold text-success my-5">M.S Office Automation</h1>
+
+            <hr>
+
+            <!-- MS Word -->
+            <h2 class="my-3" style="color:green; text-align:center;">
+                Microsoft Word
+            </h2>
+
+            <p class="fw-bold my-2" style="color:darkcyan;">
+                Document Creation, Editing and Formatting.
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+                color:#333333;
+                background-color:#f0f8ff;
+                font-family:Arial;
+                font-size:18px;
+                line-height:2;
+                padding:20px;
+                border:2px solid #2196f3;
+                border-radius:10px;
+                text-align:justify;
+            ">
+
+                <span style="color:red; font-weight:bold;">
+                    Microsoft Word
+                </span>
+                is a popular word processing application developed by Microsoft.
+
+                It is used to create, edit and format documents.
+
+                Microsoft Word helps users prepare professional documents.
+
+                It is useful for students, teachers and office workers.
+
+                Users can create letters and reports.
+
+                They can prepare assignments and project documents.
+
+                <span style="color:blue; font-weight:bold;">Text formatting</span>
+                is an important feature of MS Word.
+
+                Users can change font styles and font sizes.
+
+                They can change text colors.
+
+                They can make text bold, italic and underline.
+
+                Paragraph alignment helps arrange document content.
+
+                Users can align text to the left, right and center.
+
+                They can also justify paragraphs.
+
+                Microsoft Word provides page layout options.
+
+                Users can change page margins.
+
+                They can change page orientation.
+
+                They can select different paper sizes.
+
+                Headers and footers can be added to documents.
+
+                Page numbers can also be inserted.
+
+                Users can create tables in MS Word.
+
+                Tables help organize information clearly.
+
+                Pictures and shapes can be inserted.
+
+                WordArt helps create attractive text.
+
+                Bullets and numbering help organize lists.
+
+                Spell check helps identify spelling mistakes.
+
+                Grammar tools help improve writing.
+
+                Find and Replace helps edit documents quickly.
+
+                Mail Merge is another important feature.
+
+                It helps create multiple personalized letters.
+
+                Microsoft Word supports printing documents.
+
+                Users can save documents in different formats.
+
+                DOCX and PDF are commonly used formats.
+
+                MS Word is useful in schools and colleges.
+
+                It is also used in offices and businesses.
+
+                Learning MS Word improves documentation skills.
+
+                It is an important computer application for office automation.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <!-- MS Excel -->
+            <h2 class="my-3" style="color:green; text-align:center;">
+                Microsoft Excel
+            </h2>
+
+            <p class="fw-bold" style="color:darkcyan;">
+                Spreadsheets, Formulas, Functions and Charts.
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+                color:#333333;
+                background-color:#fff8e7;
+                font-family:Arial;
+                font-size:18px;
+                line-height:2;
+                padding:20px;
+                border:2px solid #e67e22;
+                border-radius:10px;
+                text-align:justify;
+            ">
+
+                <span style="color:red; font-weight:bold;">
+                    Microsoft Excel
+                </span>
+                is a spreadsheet application developed by Microsoft.
+
+                It is used to organize and manage data.
+
+                Excel contains rows and columns.
+
+                The intersection of a row and column is called a cell.
+
+                Each cell has a unique cell address.
+
+                Excel is useful for calculations and data analysis.
+
+                Users can enter numbers and text.
+
+                They can create tables and spreadsheets.
+
+                Formulas are used to perform calculations.
+
+                A formula usually starts with an equal sign.
+
+                Excel provides many built-in functions.
+
+                <span style="color:blue; font-weight:bold;">SUM</span>
+                is used to calculate the total.
+
+                <span style="color:purple; font-weight:bold;">AVERAGE</span>
+                is used to calculate the average.
+
+                <span style="color:green; font-weight:bold;">MAX</span>
+                finds the highest value.
+
+                <span style="color:orange; font-weight:bold;">MIN</span>
+                finds the lowest value.
+
+                COUNT is used to count numeric values.
+
+                IF is used to perform logical operations.
+
+                Excel provides sorting and filtering options.
+
+                Users can arrange data in ascending order.
+
+                They can also arrange data in descending order.
+
+                Filters help display selected information.
+
+                Charts are used to represent data visually.
+
+                Excel supports bar charts and pie charts.
+
+                It also supports line charts.
+
+                Conditional formatting highlights important values.
+
+                PivotTables help summarize large amounts of data.
+
+                Users can prepare salary statements.
+
+                They can calculate student marks.
+
+                They can maintain attendance records.
+
+                They can prepare business reports.
+
+                Excel supports data validation.
+
+                It helps reduce data entry errors.
+
+                Users can save workbooks in different formats.
+
+                XLSX is the common Excel file format.
+
+                Microsoft Excel is widely used in offices.
+
+                It is useful for accounting and business management.
+
+                Learning Excel improves calculation and data management skills.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <!-- MS PowerPoint -->
+            <h2 class="my-3" style="color:green; text-align:center;">
+                Microsoft PowerPoint
+            </h2>
+
+            <p class="fw-bold" style="color:darkcyan;">
+                Presentation, Slides, Animation and Design.
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+                color:#333333;
+                background-color:#f0fff0;
+                font-family:Arial;
+                font-size:18px;
+                line-height:2;
+                padding:20px;
+                border:2px solid #28a745;
+                border-radius:10px;
+                text-align:justify;
+            ">
+
+                <span style="color:red; font-weight:bold;">
+                    Microsoft PowerPoint
+                </span>
+                is a presentation software developed by Microsoft.
+
+                It is used to create attractive presentations.
+
+                A presentation contains multiple slides.
+
+                Each slide can contain text and images.
+
+                Users can add pictures and shapes.
+
+                They can insert tables and charts.
+
+                PowerPoint provides different slide layouts.
+
+                Users can select attractive themes.
+
+                They can change slide backgrounds.
+
+                Font styles and colors can be customized.
+
+                Animations make presentation objects attractive.
+
+                Transitions are used between slides.
+
+                Users can add audio and video files.
+
+                SmartArt helps present information visually.
+
+                Slide Show displays the presentation.
+
+                Presenter View helps presenters manage slides.
+
+                PowerPoint is useful for classroom teaching.
+
+                Students can prepare seminar presentations.
+
+                Teachers can create educational materials.
+
+                Business people can prepare project presentations.
+
+                Users can save presentations in PPTX format.
+
+                Presentations can also be exported as PDF files.
+
+                PowerPoint improves communication skills.
+
+                It helps explain information clearly.
+
+                Learning PowerPoint is useful for education and business.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+
+
+            <h2 class="my-3" style="color:green; text-align:center;">
+                Essential Computer Skills
+            </h2>
+
+            <p class="fw-bold" style="color:darkcyan;">
+                Computer Basics, Technology, Internet and Digital Skills.
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+    color:#333333;
+    background-color:#f0fff0;
+    font-family:Arial;
+    font-size:18px;
+    line-height:2;
+    padding:20px;
+    border:2px solid #28a745;
+    border-radius:10px;
+    text-align:justify;
+">
+
+                <span style="color:red; font-weight:bold;">
+                    Essential Computer Skills
+                </span>
+                are important skills required to use computers effectively.
+
+                Computers are used in education, business, offices and daily life.
+
+                Basic computer knowledge helps people perform different tasks easily.
+
+                A computer consists of hardware and software.
+
+                Hardware includes the monitor, keyboard, mouse and CPU.
+
+                Software includes operating systems and applications.
+
+                Users should know how to start and shut down a computer.
+
+                They should learn how to use a keyboard and mouse.
+
+                Typing skills help users enter information quickly.
+
+                File management helps organize documents and folders.
+
+                Users should know how to create, save, copy and delete files.
+
+                Microsoft Windows is a popular operating system.
+
+                Microsoft Word is used to create and edit documents.
+
+                Microsoft Excel is used to organize data and perform calculations.
+
+                Microsoft PowerPoint is used to create presentations.
+
+                Internet skills help users search for information online.
+
+                Web browsers are used to access websites.
+
+                Email is used to send and receive messages.
+
+                Users can download and upload files through the internet.
+
+                Online communication helps people connect with others.
+
+                Computer skills include basic troubleshooting.
+
+                Users should understand how to install and update software.
+
+                Cybersecurity helps protect computers from online threats.
+
+                Strong passwords improve account security.
+
+                Antivirus software helps protect computers from malware.
+
+                Digital skills are useful for online learning.
+
+                Students can prepare assignments and projects using computers.
+
+                Teachers can create educational materials.
+
+                Employees can prepare reports and manage office work.
+
+                Businesses use computers for accounting and communication.
+
+                Basic programming knowledge helps develop logical thinking.
+
+                Cloud storage helps users save and access files online.
+
+                Video conferencing supports online meetings and classes.
+
+                Computer skills improve productivity and confidence.
+
+                Learning essential computer skills is important for education,
+                employment and modern life.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+
+            <!-- Conclusion -->
+            <h2 style="color:green; text-align:center;" class="my-4">
+                Importance of M.S Office Automation
+            </h2>
+
+            <p style="
+                color:#333333;
+                background-color:#e3f2fd;
+                font-family:Arial;
+                font-size:18px;
+                line-height:2;
+                padding:20px;
+                border:2px solid #2196f3;
+                border-radius:10px;
+                text-align:justify;
+            ">
+
+                M.S Office Automation plays an important role in modern offices.
+
+                It helps users complete office work quickly.
+
+                It reduces manual work and saves time.
+
+                Microsoft Word is used for document preparation.
+
+                Microsoft Excel is used for calculations and data management.
+
+                Microsoft PowerPoint is used for presentations.
+
+                Microsoft Access is used for database management.
+
+                These applications improve productivity.
+
+                They are useful for students and employees.
+
+                Learning MS Office is an important computer skill.
+
+                It provides many opportunities in education and employment.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <a href="index1.html" class="my-4 btn btn-primary">
+                Back to Home
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div>
+        <footer class="bg-dark text-white text-center p-3">
+            <p class="mb-0">© 2026 TIET PBT. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIET - Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+
+            <a href="index1.html">
+                <font face="Arial" color="blue" size="6">
+                    <b>TIET</b> 💻
+                </font>
+                <br>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index1.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                                Menu
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Web development.html">Web Development</a></li>
+                                <li><a class="dropdown-item" href="m.s office.html">M.S office automation</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="animation.html">Other Services</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <!-- Like Button -->
+                    <button class="btn btn-secondary btn-outline-danger ms-auto" id="likeBtn" onclick="addLike()">
+                        🤍 Like <span id="likeCount">0</span>
+                    </button>
+
+                    <script>
+                        let count = Number(localStorage.getItem("likeCount")) || 0;
+                        let liked = localStorage.getItem("liked") === "true";
+
+                        function updateButton() {
+                            document.getElementById("likeCount").innerText = count;
+
+                            document.getElementById("likeBtn").innerHTML =
+                                (liked ? "❤️ Liked " : "🤍 Like ") +
+                                '<span id="likeCount">' + count + '</span>';
+                        }
+
+                        function addLike() {
+                            if (liked) {
+                                count--;
+                                liked = false;
+                            } else {
+                                count++;
+                                liked = true;
+                            }
+
+                            localStorage.setItem("likeCount", count);
+                            localStorage.setItem("liked", liked);
+
+                            updateButton();
+                        }
+
+                        updateButton();
+                    </script>
+                </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+
+        <div class="container mt-5 text-center">
+
+
+            <div style="
+           background-color:#e3f2fd;
+           color:#0d47a1;
+           border:3px solid #2196f3;
+           border-radius:15px;
+           padding:25px;
+           margin:20px;
+           text-align:center;
+           font-family:Arial;
+           font-size:30px;
+           font-weight:bold;
+           box-shadow:3px 3px 12px gray;
+          ">
+
+                <p style="margin:0;">
+                    Welcome to TIET
+                </p>
+
+            </div>
+
+            <h1 class="fw-bold text-success my-5">Web Development</h1>
+            <hr>
+
+            <h2 class=" my-3" style="color:green; text-align:center;">
+                Frontend Development
+            </h2>
+            <p class="fw-bold" style="color:darkcyan ;">HTML, CSS, Bootstrap and JavaScript.</p>
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+          color:#333333;
+           background-color:#f0f8ff;
+          font-family:Arial;
+          font-size:18px;
+          line-height:2;
+         padding:20px;
+         border:2px solid #2196f3;
+         border-radius:10px;
+           text-align:justify;
+         ">
+
+                <span style="color:red; font-weight:bold;">
+                    Frontend Development
+                </span>
+                is an important part of web development.
+
+                It focuses on designing and developing the visible part of a website.
+
+                Frontend development helps users interact with websites easily.
+
+                It creates attractive and user-friendly web pages.
+
+                Frontend developers work with
+                <span style="color:blue; font-weight:bold;">
+                    HTML, CSS and JavaScript.
+                </span>
+
+                <span style="color:green; font-weight:bold;">HTML</span>
+                is used to create the structure of a website.
+
+                <span style="color:purple; font-weight:bold;">CSS</span>
+                is used to design and style web pages.
+
+                <span style="color:orange; font-weight:bold;">JavaScript</span>
+                is used to add interactive features.
+
+                Frontend development makes websites more attractive.
+
+                It improves the user experience.
+
+                Every website needs a good frontend design.
+
+                Frontend developers create navigation menus.
+
+                They also create buttons and forms.
+
+                They design headers and footers.
+
+                They create image galleries.
+
+                They develop responsive web pages.
+
+                Responsive design helps websites work on mobile phones.
+
+                It also supports tablets and desktop computers.
+
+                HTML stands for HyperText Markup Language.
+
+                HTML is the foundation of web development.
+
+                It contains different tags and elements.
+
+                Headings are created using heading tags.
+
+                Paragraphs are created using paragraph tags.
+
+                Images are added using image tags.
+
+                Links are created using anchor tags.
+
+                Tables are used to display information.
+
+                Forms are used to collect user information.
+
+                Lists are used to organize content.
+
+                CSS stands for Cascading Style Sheets.
+
+                CSS controls the appearance of web pages.
+
+                It changes background colors.
+
+                It changes text colors and font sizes.
+
+                It controls margins and padding.
+
+                It helps create beautiful layouts.
+
+                CSS can create borders and shadows.
+
+                It supports animations and transitions.
+
+                CSS improves website presentation.
+
+                JavaScript is a programming language.
+
+                It makes websites interactive.
+
+                JavaScript can validate forms.
+
+                It can display messages.
+
+                It can create dropdown menus.
+
+                It can handle button clicks.
+
+                It can update webpage content.
+
+                It can perform calculations.
+
+                Frontend developers also use Bootstrap.
+
+                Bootstrap is a frontend framework.
+
+                It provides ready-made design components.
+
+                It helps create responsive websites.
+
+                It includes buttons and navigation bars.
+
+                It also provides forms and cards.
+
+                Frontend development requires creativity.
+
+                It also requires problem-solving skills.
+
+                Developers should understand website layouts.
+
+                They should learn HTML fundamentals.
+
+                They should practice CSS regularly.
+
+                They should understand JavaScript basics.
+
+                They should learn responsive web design.
+
+                They should test websites in different browsers.
+
+                Website accessibility is also important.
+
+                Good frontend design improves usability.
+
+                It helps visitors find information quickly.
+
+                It makes websites simple to navigate.
+
+                Frontend development is useful for business websites.
+
+                It is also useful for educational websites.
+
+                It is used in online shopping websites.
+
+                It is used in banking applications.
+
+                It is used in social media platforms.
+
+                Frontend development provides many career opportunities.
+
+                Students can become frontend developers.
+
+                They can become web designers.
+
+                They can work as UI developers.
+
+                They can also work as freelance developers.
+
+                Learning frontend development is a good career choice.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+            <h2 style="color:green; text-align:center;" class="my-2">
+                Backend Development
+            </h2>
+            <p class="fw-bold" style="color:darkcyan ;">PHP, Python, Java and Database.</p>
+
+
+
+
+            <hr style="border:2px solid orange;">
+
+            <p style="
+    color:#333333;
+    background-color:#fff8e7;
+    font-family:Arial;
+    font-size:18px;
+    line-height:2;
+    padding:20px;
+    border:2px solid #e67e22;
+    border-radius:10px;
+    text-align:justify;
+">
+
+                <span style="color:red; font-weight:bold;">
+                    Backend Development
+                </span>
+                is another important part of web development.
+
+                It focuses on the server-side functionality of a website.
+
+                Backend development manages data and application logic.
+
+                It works behind the scenes of a website.
+
+                Users cannot directly see backend operations.
+
+                Backend development connects websites with databases.
+
+                It processes information submitted by users.
+
+                It manages user accounts and passwords.
+
+                It helps websites store information securely.
+
+                Backend developers work with programming languages.
+
+                Common backend languages include
+                <span style="color:blue; font-weight:bold;">PHP</span>
+                and
+                <span style="color:purple; font-weight:bold;">Python.</span>
+
+                <span style="color:green; font-weight:bold;">Java</span>
+                is also used for backend development.
+
+                <span style="color:orange; font-weight:bold;">JavaScript</span>
+                can be used with Node.js.
+
+                Backend developers create server-side applications.
+
+                They develop website functionality.
+
+                They manage database connections.
+
+                They process website requests.
+
+                They send responses to users.
+
+                Backend development makes websites functional.
+
+                PHP is a popular backend programming language.
+
+                PHP is used to develop dynamic websites.
+
+                It can connect with databases.
+
+                It can process HTML forms.
+
+                It can manage user login systems.
+
+                Python is another popular programming language.
+
+                Python is simple and easy to understand.
+
+                It is used in web application development.
+
+                Django is a Python web framework.
+
+                Flask is another Python framework.
+
+                Java is also widely used in backend development.
+
+                It is useful for large applications.
+
+                Node.js allows JavaScript to run on servers.
+
+                It is used to build web applications.
+
+                Backend development also uses databases.
+
+                A database stores website information.
+
+                <span style="color:blue; font-weight:bold;">MySQL</span>
+                is a popular relational database.
+
+                <span style="color:purple; font-weight:bold;">PostgreSQL</span>
+                is another relational database.
+
+                <span style="color:green; font-weight:bold;">MongoDB</span>
+                is a NoSQL database.
+
+                Databases store user details.
+
+                They store product information.
+
+                They store student records.
+
+                They store customer information.
+
+                Backend developers use SQL queries.
+
+                SQL is used to manage relational databases.
+
+                It can insert new records.
+
+                It can update existing records.
+
+                It can delete unwanted records.
+
+                It can retrieve stored information.
+
+                Servers are important in backend development.
+
+                A server processes client requests.
+
+                It sends information back to users.
+
+                Backend developers create APIs.
+
+                <span style="color:red; font-weight:bold;">
+                    API stands for Application Programming Interface.
+                </span>
+
+                APIs allow different applications to communicate.
+
+                They help connect frontend and backend systems.
+
+                Backend development also includes authentication.
+
+                Authentication verifies user identity.
+
+                Authorization controls access permissions.
+
+                Security is very important in backend development.
+
+                Developers should protect sensitive information.
+
+                They should validate user input.
+
+                They should use secure password storage.
+
+                They should manage database permissions.
+
+                Backend developers should understand networking.
+
+                They should understand server operations.
+
+                They should learn database management.
+
+                They should practice programming regularly.
+
+                Backend development is useful for business applications.
+
+                It is used in online shopping websites.
+
+                It is used in banking systems.
+
+                It is used in educational portals.
+
+                It is used in hospital management systems.
+
+                Backend development provides many career opportunities.
+
+                Students can become backend developers.
+
+                They can become database administrators.
+
+                They can become API developers.
+
+                They can work as software developers.
+
+                Learning backend development is an important technology skill.
+
+            </p>
+
+            <hr style="border:2px solid orange;">
+
+
+
+
+
+            <a href="index1.html" class=" my-4 btn btn-primary">
+                Back to Home
+            </a>
+
+        </div>
+    </div>
+
+    <div>
+        <footer class="bg-dark text-white text-center p-3">
+            <p class="mb-0">© 2026 TIET PBT. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
